@@ -4,40 +4,43 @@ const section = document.querySelector("section");
 
 // STEP 3a: Create the asynchronous function populate()
 function populate(){
+    // Introducing JavaScript Object Notation (JSON): https://json.org/
+    // STEP 4a: Create i-scream.json file with companyName, headOffice, established, active, topFlavors(name, calories, type, ingredients, image) */
+    // STEP 4b: Store the URL of a JSON file in a variable */
+    const url = "https://bricestemmler.github.io/week11-javascript/js/i-scream.json";
 
+    // STEP 5: Use the new URL to create a new request object
+    const request = new Request(url);
 
+    // STEP 6: Make a network request with the fetch() function, which returns a Response object
+    const response = await fetch(request);
 
+    // STEP 7: Capture the returned Response object and covert to a JSON object using json()
+    const responsejson = response.json();
 
-// Introducing JavaScript Object Notation (JSON): https://json.org/
-// STEP 4a: Create i-scream.json file with companyName, headOffice, established, active, topFlavors(name, calories, type, ingredients, image) */
-// STEP 4b: Store the URL of a JSON file in a variable */
-const url = 
+    // STEP 8: Output the iScream JSON object to the console 
+    console.log(responsejson);
 
-// STEP 5: Use the new URL to create a new request object
+    // STEP 9a: Invoke the populateHeader function here, then build it below
 
-// STEP 6: Make a network request with the fetch() function, which returns a Response object
+    // STEP 10a: Invoke the showTopFlavors function here, then build it below
 
-// STEP 7: Capture the returned Response object and covert to a JSON object using json()
-
-// STEP 8: Output the iScream JSON object to the console 
-
-// STEP 9a: Invoke the populateHeader function here, then build it below
-
-// STEP 10a: Invoke the showTopFlavors function here, then build it below
-
-
-
-// STEP 3b: Call the populate() function
 }
 
+// STEP 3b: Call the populate() function
+
+populate();
+
 /* STEP 9b: Build out the populateHeader() function */
+function populateHeader(){
+    // Create the H1 element
+    let h1 = document.createElement("h1");
 
-// Create the H1 element
+    // Grab the company name from the JSON object and use it for the text node
+    h1.textContent = jsonBody.companyName;
 
-// Grab the company name from the JSON object and use it for the text node
-
-// Inject the complete H1 element into the DOM, inside the HEADER
-
+    // Inject the complete H1 element into the DOM, inside the HEADER
+}
 /* STEP 10b: Assemble the showTopFlavors() function */
 
 // STEP 10c: Bind the JSON topFlavors object to a var
