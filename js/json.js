@@ -16,10 +16,10 @@ async function populate(){
     const response = await fetch(request);
 
     // STEP 7: Capture the returned Response object and covert to a JSON object using json()
-    const responsejson = await response.json();
+    const responseJson = await response.json();
 
     // STEP 8: Output the iScream JSON object to the console 
-    console.log(responsejson);
+    console.log(responseJson);
 
     // STEP 9a: Invoke the populateHeader function here, then build it below
     populateHeader(responseJson);
