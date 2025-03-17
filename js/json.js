@@ -3,7 +3,7 @@ const header = document.querySelector("header");
 const section = document.querySelector("section");
 
 // STEP 3a: Create the asynchronous function populate()
-function populate(){
+async function populate(){
     // Introducing JavaScript Object Notation (JSON): https://json.org/
     // STEP 4a: Create i-scream.json file with companyName, headOffice, established, active, topFlavors(name, calories, type, ingredients, image) */
     // STEP 4b: Store the URL of a JSON file in a variable */
@@ -32,30 +32,35 @@ function populate(){
 populate();
 
 /* STEP 9b: Build out the populateHeader() function */
-function populateHeader(){
+function populateHeader(jsonBody){
     // Create the H1 element
     let h1 = document.createElement("h1");
 
     // Grab the company name from the JSON object and use it for the text node
     h1.textContent = jsonBody.companyName;
+    p.textContent = `Head Office: ${jsonBody.headOffice}, est. ${jsonBody.Established} - Active: ${(jsonBody.active) ? "Yes" : "No"}`;
 
     // Inject the complete H1 element into the DOM, inside the HEADER
+    header.appendChild(h1);
+    header.appendChild(p);
 }
 /* STEP 10b: Assemble the showTopFlavors() function */
+function showTopFlavors(jsonBody){
+    // STEP 10c: Bind the JSON topFlavors object to a var
+    let topFlavors = jsonBody.topFlavors;
 
-// STEP 10c: Bind the JSON topFlavors object to a var
+    // STEP 10d: Loop through the topFlavors object
+    for(let i = 0; i < topFlavors.length; i++){
+        console.log(topFlavors[i]);
+        // STEP 10e: build HTML elements for the content: article, h2, image, p1, p2, list
 
+        // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
 
-// STEP 10d: Loop through the topFlavors object
+        // STEP 10g: Build a loop for the ingredients array in the JSON
 
-// STEP 10e: build HTML elements for the content: article, h2, image, p1, p2, list
-
-// STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
-
-// STEP 10g: Build a loop for the ingredients array in the JSON
-
-// STEP 10i: Append each complete ARTICLE element to the SECTION element
-
+        // STEP 10i: Append each complete ARTICLE element to the SECTION element
+    }
+}
 
 // STEP 11: Add a 3rd flavour of ice cream to the local JSON file, making use of the /images/strawberry-sprinkle.svg image
 
