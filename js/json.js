@@ -53,8 +53,18 @@ function showTopFlavors(jsonBody){
     for(let i = 0; i < topFlavors.length; i++){
         console.log(topFlavors[i]);
         // STEP 10e: build HTML elements for the content: article, h2, image, p1, p2, list
+        let article = document.createElement("article");
+        let h2 = document.createElement ("h2"); //<h2> </h2>
+        let p1 = document.createElement("p");
+        let p2 = document.createElement("p");
+        let img = document.createElement("img");
+        let list = document.createElement("ul");
 
         // STEP 10f: Set the textContent property for each of the above elements (except the UL), based on the JSON content
+        h2.textContent = topFlavors[i].name;
+        p1.textContent = `Calories: ${topFlavors[i].calories}`;
+        p2.textContent = `Type: ${topFlavors[i].type}`;
+        image.setAttribute("src", topFlavors[i].image);
 
         // STEP 10g: Build a loop for the ingredients array in the JSON
 
