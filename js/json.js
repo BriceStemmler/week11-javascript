@@ -16,15 +16,15 @@ async function populate(){
     const response = await fetch(request);
 
     // STEP 7: Capture the returned Response object and covert to a JSON object using json()
-    const responsejson = response.json();
+    const responsejson = await response.json();
 
     // STEP 8: Output the iScream JSON object to the console 
     console.log(responsejson);
 
     // STEP 9a: Invoke the populateHeader function here, then build it below
-
+    populateHeader(responseJson);
     // STEP 10a: Invoke the showTopFlavors function here, then build it below
-
+    showTopFlavors(responseJson);
 }
 
 // STEP 3b: Call the populate() function
@@ -69,6 +69,12 @@ function showTopFlavors(jsonBody){
         // STEP 10g: Build a loop for the ingredients array in the JSON
 
         // STEP 10i: Append each complete ARTICLE element to the SECTION element
+        article.appendChild(h2);
+        article.appendChild(p1);
+        article.appendChild(p2);
+        article.appendChild(image);
+
+        section.appendChild(article);
     }
 }
 
