@@ -35,7 +35,7 @@ populate();
 function populateHeader(jsonBody){
     // Create the H1 element
     let h1 = document.createElement("h1");
-
+    let p = document.createElement("p");
     // Grab the company name from the JSON object and use it for the text node
     h1.textContent = jsonBody.companyName;
     p.textContent = `Head Office: ${jsonBody.headOffice}, est. ${jsonBody.Established} - Active: ${(jsonBody.active) ? "Yes" : "No"}`;
